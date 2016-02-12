@@ -13,6 +13,13 @@ public class PezDispenser {
         mPezCount = 0;
     }
 
+    // Helper Method
+    public boolean isEmpty() {
+        return mPezCount == 0;
+
+    }
+
+
     public void load(){
         //Setter
         mPezCount = MAX_PEZ;
