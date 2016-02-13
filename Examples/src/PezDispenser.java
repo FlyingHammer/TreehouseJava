@@ -13,6 +13,17 @@ public class PezDispenser {
         mPezCount = 0;
     }
 
+    public boolean dispense() {
+        boolean wasDepensed = false;
+        if (!isEmpty()) {
+            mPezCount--;
+            wasDepensed = true;
+        }
+        return wasDepensed;
+
+
+    }
+
     // Helper Method
     public boolean isEmpty() {
         return mPezCount == 0;
@@ -22,7 +33,15 @@ public class PezDispenser {
 
     public void load(){
         //Setter
-        mPezCount = MAX_PEZ;
+        load(MAX_PEZ);
+    }
+
+    public void load(int pezAmount) {
+        int newAmount = mPezCount + pezAmount;
+        if (newAmount > MAX_PEZ) {
+           throw new IllegalArgumentException("STOP, too Many Pez!!");
+        }
+        mPezCount = newAmount;
     }
 
     // Getter

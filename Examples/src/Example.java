@@ -22,5 +22,30 @@ public class Example {
             System.out.println("Its no longer empty");
         }
 
+        while (dispenser.dispense() ) {
+            System.out.println("Chomp Chomp");
+
+        }
+
+         if (dispenser.isEmpty()) {
+            System.out.println("Sorry, the Pez Dispenser is now empty");
+        }
+
+        dispenser.load(4);
+        dispenser.load(2);
+        while (dispenser.dispense() ) {
+            System.out.println("Chomp Chomp");
+
+        }
+        try {
+
+         dispenser.load(400);
+         System.out.println("This will never happen");
+        } catch (IllegalArgumentException iae) {
+            System.out.println("Too many PEZ!");
+            System.out.printf("The error was %s\n", iae.getMessage());
+        }
+
+
     }
 }
